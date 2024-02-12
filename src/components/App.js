@@ -1,4 +1,5 @@
 import ReviewList from "./ReviewList";
+import ReviewForm from "./ReviewForm";
 import { getReviews } from "../api";
 import { useEffect, useState } from "react";
 
@@ -59,6 +60,7 @@ function App() {
         <button onClick={handleNewestClick}>최신순</button>
         <button onClick={handleBestClick}>베스트순</button>
       </div>
+      <ReviewForm />
       <ReviewList items={sortedItems} onDelete={handleDelete} />
       {hasNext && (
         <button disabled={isLoading} onClick={handleLoadMore}>
